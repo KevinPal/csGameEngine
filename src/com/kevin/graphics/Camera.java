@@ -5,12 +5,14 @@ public class Camera {
 	private Matrix transform;
 	private Matrix invTransform;
 	private Vector pos;
+	private float nearCliping;
 	
-	public Camera(Matrix transform) {
+	public Camera(Matrix transform, float nearClipping) {
 		this.transform = transform;
 		pos = new Vector(0, 0, 0);
 		pos = pos.muliply(transform);
 		invTransform = transform.inverse();
+		this.nearCliping = nearClipping;
 	}
 	
 	public Vector getPos() {
@@ -33,6 +35,20 @@ public class Camera {
 	}
 	public void setInvTransform(Matrix invTransform) {
 		this.invTransform = invTransform;
+	}
+
+	/**
+	 * @return the nearCliping
+	 */
+	public float getNearCliping() {
+		return nearCliping;
+	}
+
+	/**
+	 * @param nearCliping the nearCliping to set
+	 */
+	public void setNearCliping(float nearCliping) {
+		this.nearCliping = nearCliping;
 	}
 	
 	

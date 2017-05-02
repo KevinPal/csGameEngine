@@ -146,7 +146,7 @@ public class Renderer extends Canvas {
 
 			float distance = camera.getPos().subtract(position).length();
 
-			if (distance < depthBuffer[y][x]) {
+			if (distance < depthBuffer[y][x] || distance < camera.getNearCliping()) {
 				continue;
 			}
 

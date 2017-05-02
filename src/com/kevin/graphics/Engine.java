@@ -36,7 +36,7 @@ public class Engine {
 		renderer.addLight(light1);
 		renderer.getGraphics().setColor(Color.BLACK);
 
-		Camera camera = new Camera(new Matrix().identityMatrix());
+		Camera camera = new Camera(new Matrix().identityMatrix(), 1);
 
 		Time.init();
 		
